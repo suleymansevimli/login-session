@@ -10,6 +10,7 @@
       }elseif ($sifre != $uye['sifre']) {
         $hata = "lütfen şifrenizi kontrol ediniz";
       }else{
+          $_SESSION['zaman'] = time()+10;
           $_SESSION['kullanici_adi'] = $kullanici_adi;
           // Ana Sayfamıza yönlendirme yapıyoruz
           // -> nokta kendi dizinine yönlendirir

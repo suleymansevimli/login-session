@@ -1,6 +1,13 @@
 <?php
     session_start();
     require 'config.php';
+    if (isset($_SESSION['zaman']) && time() > $_SESSION['zaman']) {
+      echo "Oturumunuz Sonlandırıldı";
+      session_destroy();
+      header('Location:oturum_remove.php',2);
+    }else{
+      $_SESSION['zaman'] = time()+10;
+    }
  ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
